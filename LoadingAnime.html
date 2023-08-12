@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .anime1{
+            width: 20%;
+            height: 20px;
+            background-color: red;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+        .anime1-inner{
+            position: absolute;
+            width: 0%;
+            background-color: blue;
+            height: 20px;
+            animation: anime1 5s infinite linear;
+        }
+        @keyframes anime1 {
+            from {width: 0;}
+            to {width: 100%;}
+        }
+        .anime2{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            overflow: hidden;
+            position: relative;
+            border-radius: 50%; 
+        }
+        .anime2-inner{
+            position: absolute;
+            width: 100%;
+            height: 0px;
+            background-color: blue;
+            animation: anime2 5s infinite linear;
+            bottom: 0;  
+            border-radius: 10%; 
+        }
+        @keyframes anime2 {
+            from {
+                height: 0%;
+            }
+            to {
+                height: 100%;
+            }
+        }
+        .anime3{
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+        .anime3-inner1{
+            width: 20px;
+            height: 20px;
+            background-color: #fff;
+            position: absolute;
+
+        }
+        .anime4{
+            position: relative;
+            width: 400px;
+            height: 200px;
+            background-color: red;
+            display: flex;
+            align-items: center;
+        }
+        .anime4-inner1{
+            width: 0px;
+            height: 0px;
+            background-color: #fff;
+            border-radius: 50%;
+            position: absolute;
+            animation: anime4 2s infinite;
+        }
+        .anime4-inner2{
+            width: 0px;
+            height: 0px;
+            background-color: #fff;
+            border-radius: 50%;
+            position: absolute;
+            animation: anime4 2s infinite 0.5s;
+        }
+        .anime4-inner3{
+            width: 0px;
+            height: 0px;
+            background-color: #fff;
+            border-radius: 50%;
+            position: absolute;
+            animation: anime4 2s infinite 0.8s;
+        }
+        @keyframes anime4{
+            from{
+                left: 20px;
+                opacity: 0;
+            }
+            to{
+                left: 300px;
+                opacity: 1;
+                width: 20px;
+                height: 20px;
+            }
+        }
+        .anime5{
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            display: flex;
+            align-items: center;
+        }
+        .anime5-inner1{
+            width: 20px;
+            height: 20px;
+            background-color: #fff;
+            border-radius: 50%;
+            left: 30px;
+            position: absolute;
+            animation: anime5 2s infinite;
+        }
+        .anime5-inner2{
+            width: 20px;
+            height: 20px;
+            background-color: #fff;
+            border-radius: 50%;
+            left: 60px;
+            position: absolute;
+            animation: anime5 2s infinite 0.5s;
+        }
+        .anime5-inner3{
+            width: 20px;
+            height: 20px;
+            background-color: #fff;
+            border-radius: 50%;
+            left: 90px;
+            position: absolute;
+            animation: anime5 2s infinite 0.8s;
+        }
+        @keyframes anime5{
+            from{
+                opacity: 1;
+                
+            }
+            to{
+                opacity: 0.2;
+            }
+        }
+        .anime6{
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            display: flex;
+            align-items: center;
+        }
+        .anime6-inner1{
+            width: 20px;
+            height: 20px;
+            background-color: #fff;
+            border-radius: 50%;
+            left: 30px;
+            position: absolute;
+            animation: anime6 2s infinite;
+        }
+        .anime6-inner2{
+            width: 20px;
+            height: 20px;
+            background-color: #fff;
+            border-radius: 50%;
+            left: 60px;
+            position: absolute;
+            animation: anime6 2s infinite 0.5s;
+        }
+        .anime6-inner3{
+            width: 20px;
+            height: 20px;
+            background-color: #fff;
+            border-radius: 50%;
+            left: 90px;
+            position: absolute;
+            animation: anime6 2s infinite 0.8s;
+        }
+        @keyframes anime6{
+            from{
+                top:80px;
+            }
+            to{
+               top:20px;
+            }
+        }
+        .anime7{
+            position: relative;
+            width: 300px;
+            height: 200px;
+            background-color: red;
+            display: flex;
+            align-items: center;
+        }
+        .anime7-inner1{
+            width: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            left: 30px;
+            position: absolute;
+            animation: anime7 2s infinite 4s;
+        }
+        .anime7-inner2{
+            width: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            left: 60px;
+            position: absolute;
+            animation: anime7 2s infinite 3s;
+        }
+        .anime7-inner3{
+            width: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            left: 90px;
+            position: absolute;
+            animation: anime7 2s infinite;
+        }
+        .anime7-inner4{
+            width: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            left: 120px;
+            position: absolute;
+            animation: anime7 2s infinite 3s;
+        }
+        .anime7-inner5{
+            width: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            left: 150px;
+            position: absolute;
+            animation: anime7 2s infinite 4s;
+        }
+        @keyframes anime7{
+            from{
+                height: 100px;
+            }
+            to{
+               height: 20px;
+            }
+        }
+        .anime8{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .anime8 img{
+            animation: anime8 2s infinite;
+        }
+        @keyframes anime8{
+            from{
+
+            }
+            to{
+                transform: rotate(180deg);
+            }
+        }
+    </style>
+    <div class="anime1">
+        <span class="anime1-inner"></span>
+    </div>
+    <br>
+    <div class="anime2">
+        <span class="anime2-inner"></span>
+    </div>
+    <br>
+    <div class="anime3">
+        <span class="anime3-inner1"></span>
+        <span class="anime3-inner2"></span>
+        <span class="anime3-inner3"></span>
+    </div>
+    <br>
+    <div class="anime4">
+        <span class="anime4-inner1"></span>
+        <span class="anime4-inner2"></span>
+        <span class="anime4-inner3"></span>
+    </div>
+    <br>
+    <div class="anime5">
+        <span class="anime5-inner1"></span>
+        <span class="anime5-inner2"></span>
+        <span class="anime5-inner3"></span>
+    </div>
+    <br>
+    <div class="anime6">
+        <span class="anime6-inner1"></span>
+        <span class="anime6-inner2"></span>
+        <span class="anime6-inner3"></span>
+    </div>
+    <br>
+    <div class="anime7">
+        <span class="anime7-inner1"></span>
+        <span class="anime7-inner2"></span>
+        <span class="anime7-inner3"></span>
+        <span class="anime7-inner4"></span>
+        <span class="anime7-inner5"></span>
+    </div>
+    <br>
+    <div class="anime8">
+        <img src="arrow.png" width="100px" height="100px">
+    </div>
+    
+</body>
+</html>
