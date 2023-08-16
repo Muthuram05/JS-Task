@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        body{
+            background-color: #1e314f;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .switch {
+            position: relative;
+            width: 60px;
+            height: 34px;
+        }
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .slider{
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #749cd5;
+            transition: .4s;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: #fee5b5;
+            transition: .4s;
+        }
+
+        input:checked+.slider {
+            background-color: #82d7fe;
+        }
+        input:checked+.slider:before {
+            transform: translateX(26px);
+            animation: anime 0.3s linear;
+        }
+        .slider.round {
+            border-radius: 34px;
+        }
+        body #am{
+            color: #fff;
+        }
+        input:checked+.slider #ball1{
+            background-color: #fff;
+            position: absolute;
+            width: 2px;
+            left: 7px;
+            top:10px;
+            height: 2px;
+            border-radius: 50%;
+            transition: 1s;
+        }
+        input:checked+.slider #ball2{
+            background-color: #fff;
+            position: absolute;
+            width: 3px;
+            left: 10px;
+            top:20px;
+            height: 3px;
+            border-radius: 50%;
+            transition: 1s;
+        }
+        input:checked+.slider #ball3{
+            background-color: #fff;
+            position: absolute;
+            width: 4px;
+            left: 14px;
+            top:10px;
+            height: 4px;
+            border-radius: 50%;
+        }
+        input:checked+.slider #pm{
+            color: #fff;
+        }
+        input:checked+.slider #ball4{
+            background-color: #fff;
+            position: absolute;
+            width: 2px;
+            left: 18px;
+            top:24px;
+            height: 2px;
+            border-radius: 50%;
+        }
+        input:checked+.slider #ball5{
+            background-color: #fff;
+            position: absolute;
+            width: 2px;
+            left: 24px;
+            top: 16px;
+            height: 2px;
+            border-radius: 50%;
+        }
+        input:checked+.slider #ball6{
+            background-color: #fff;
+            position: absolute;
+            width: 2px;
+            left: 25px;
+            top:5px;
+            height: 2px;
+            border-radius: 50%;
+
+        }
+        #ball3{
+            top:10px;
+            left: 14px;
+            height: 4px;
+            border-radius: 50%;
+            position: absolute;
+            width: 20px;
+            height: 2px;
+            background-color: #fff;
+
+        }
+        #ball5{
+            left: 24px;
+            top: 16px;
+            height: 4px;
+            border-radius: 50%;
+            position: absolute;
+            width: 20px;
+            height: 2px;
+            background-color: #fff;
+
+        }
+        #ball6{
+            left: 22px;
+            top:5px;
+            height: 4px;
+            border-radius: 50%;
+            position: absolute;
+            width: 20px;
+            height: 2px;
+            background-color: #fff;
+            
+        }
+        .slider.round:before {
+            border-radius: 50%;
+        }
+        @keyframes anime{
+            to{
+                transform: translate(28px);
+            }
+        }
+    </style>
+    <h2 id="am">AM</h2>
+    <label class="switch">
+        <input type="checkbox"> 
+        <span class="slider round">
+            <div id="ball1"></div>
+            <div id="ball2"></div>
+            <div id="ball3"></div>
+            <div id="ball4"></div>
+            <div id="ball5"></div>
+            <div id="ball6"></div>
+        </span>
+        
+    </label>
+    <h2 id="pm">PM</h2>
+</body>
+
+</html>
