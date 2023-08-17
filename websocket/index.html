@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Websockets</title>
+</head>
+<body>
+  <div>Connected</div>
+  <div id="typingStatus"></div>
+  <textarea cols="30" rows="10" id="textarea"></textarea>
+  <div id="status"></div>
+  <script>
+    const id = prompt();
+    const socket = new WebSocket("ws://127.0.0.1:3000");
+    console.log(socket);
+
+    socket.addEventListener("open", (event) => {
+      console.log("CONNECTED");
+      socket.send(JSON.stringify({ id }));
+    });
+
+    socket.addEventListener("message", (event) => {
+      console.log(event);
+      const jsonData = JSON.parse(event.data);
+      const textArea = document.getElementById("textarea");
+      textArea.value = jsonData.message || '';
+
+      const typingStatusDiv = document.getElementById("typingStatus");
+      if (jsonData.typing && jsonData.from !== id) {
+        typingStatusDiv.innerText = `${jsonData.from} is typing...`;
+      } else {
+        typingStatusDiv.innerText = '';
+      }
+    });
+
+    const textArea = document.getElementById("textarea");
+    textArea.addEventListener("keydown", (event) => {
+      console.log(event);
+      const string = textArea.value;
+
+      if (event.keyCode === 13) {
+        // User pressed Enter, sending the message
+        socket.send(JSON.stringify({ message: string, from: id }));
+        textArea.value = ''; // Clear the text area
+      } else {
+        // User is typing, send a typing notification
+        socket.send(JSON.stringify({ typing: true, from: id }));
+      }
+    });
+  </script>
+</body>
+</html>
